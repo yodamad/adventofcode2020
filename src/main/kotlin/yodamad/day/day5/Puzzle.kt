@@ -1,9 +1,7 @@
-package yodamad.day.five
+package yodamad.day.day5
 
 import java.io.File
 import java.util.*
-import java.util.stream.Collectors
-import java.util.stream.Collectors.*
 import java.util.stream.IntStream
 
 class Puzzle {

@@ -1,7 +1,6 @@
-package yodamad.day.thirteen
+package yodamad.day.day13
 
 import yodamad.day.readFileIn
-import java.sql.Timestamp
 
 class Puzzle {
     companion object {

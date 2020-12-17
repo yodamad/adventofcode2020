@@ -1,4 +1,4 @@
-package yodamad.day.fourteen
+package yodamad.day.day14
 
 import yodamad.day.readFileIn
 

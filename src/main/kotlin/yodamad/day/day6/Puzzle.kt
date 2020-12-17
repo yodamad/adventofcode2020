@@ -1,4 +1,4 @@
-package yodamad.day.six
+package yodamad.day.day6
 
 import java.io.File
 import java.io.InputStream

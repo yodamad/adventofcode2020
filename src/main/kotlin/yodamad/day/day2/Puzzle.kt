@@ -1,4 +1,4 @@
-package yodamad.day.two
+package yodamad.day.day2
 
 import java.io.File
 

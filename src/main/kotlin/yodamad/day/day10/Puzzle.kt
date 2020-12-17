@@ -1,4 +1,4 @@
-package yodamad.day.ten
+package yodamad.day.day10
 
 import yodamad.day.readFileIn
 import java.util.stream.Collectors.toList

@@ -1,4 +1,4 @@
-import yodamad.day.one.INPUT
+import yodamad.day.day1.INPUT
 import java.util.stream.Collectors.toList
 
 data class Tuple(val val1 : Int, val val2: Int)

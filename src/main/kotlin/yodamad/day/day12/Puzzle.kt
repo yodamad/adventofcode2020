@@ -1,8 +1,8 @@
-package yodamad.day.twelve
+package yodamad.day.day12
 
 import yodamad.day.readFileIn
-import yodamad.day.twelve.Dir.*
-import yodamad.day.twelve.Move.*
+import yodamad.day.day12.Dir.*
+import yodamad.day.day12.Move.*
 import kotlin.math.absoluteValue
 
 class Puzzle {

@@ -1,6 +1,6 @@
-package yodamad.day.eleven
+package yodamad.day.day11
 
-import yodamad.day.eleven.DIR.*
+import yodamad.day.day11.DIR.*
 import yodamad.day.readFileIn
 
 val EMPTY = '.'
