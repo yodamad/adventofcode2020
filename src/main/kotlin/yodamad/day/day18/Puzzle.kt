@@ -7,8 +7,11 @@ class Puzzle {
         @JvmStatic
         fun main(args: Array<String>) {
             println(Puzzle().lines())
+            //println(Puzzle().computeLine("2 * 3 + (4 * 5)"))
         }
     }
+
+    val part1 = false
 
     private fun lines() =
         "homework".readFileIn("day18").readLines().map {
@@ -29,7 +32,7 @@ class Puzzle {
     private fun computeWithParenthesis(line: String) : Long {
         var startIndex = -1
         var newLine: String
-        //println(newLine)
+        //println(line)
         line.mapIndexed { idx, c ->
             when (c) {
                 '(' -> startIndex = idx
@@ -69,6 +72,11 @@ class Puzzle {
         }
         elements.add(currentNb)
 
+        if (part1) return computePart1(elements)
+        return computePart2(elements)
+    }
+
+    private fun computePart1(elements: List<String>) : Long {
         var result = elements[0].toLong()
         elements.forEachIndexed { idx, it ->
             when (it) {
@@ -77,5 +85,41 @@ class Puzzle {
             }
         }
         return result
+    }
+
+    private fun computePart2(elements: List<String>) : Long {
+        val computed = computePlus(elements)
+        var result = computed[0].toLong()
+        computed.forEachIndexed { idx, it ->
+            when (it) {
+                "*" -> result *= computed[idx+1].toInt()
+            }
+        }
+        return result
+    }
+
+    private fun computePlus(elements: List<String>) : List<String> {
+        val tmpList = mutableListOf<String>()
+        elements.forEachIndexed { idx, s ->
+            when (s) {
+                "*" -> {
+                    tmpList.add("*")
+                }
+                "+" -> {
+                    val sum = elements[idx-1].toLong() + elements[idx+1].toLong()
+                    val newList = mutableListOf<String>()
+                    newList.addAll(tmpList)
+                    newList.add(sum.toString())
+                    newList.addAll(elements.subList(idx+2, elements.size))
+                    return if (newList.contains("+")) computePlus(newList)
+                    else newList
+                }
+                else -> {
+                    if ((idx+1) < elements.size && elements[idx+1] != "+") tmpList.add(s)
+                    else if (idx+1 == elements.size) tmpList.add(s)
+                }
+            }
+        }
+        return tmpList
     }
 }
